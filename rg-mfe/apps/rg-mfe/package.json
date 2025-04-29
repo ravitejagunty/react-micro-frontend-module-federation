@@ -1,0 +1,8 @@
+{
+  "name": "@rg-mfe/rg-mfe",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "name": "rg-mfe"
+  }
+}

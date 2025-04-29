@@ -1,0 +1,43 @@
+{
+    "name": "products",
+    "root": "apps/products",
+    "sourceRoot": "apps/products/src",
+    "projectType": "application",
+    "targets": {
+      "build": {
+        "executor": "@nx/rspack:build",
+        "options": {
+          "outputPath": "dist/apps/products",
+          "rspackConfig": "apps/products/rspack.config.js"
+        }
+      },
+      "serve": {
+        "executor": "@nx/rspack:dev-server",
+        "options": {
+          "rspackConfig": "apps/products/rspack.config.js",
+          "port": 4201
+        }
+      },
+      "test": {
+        "executor": "@nx/vite:test",
+        "options": {
+          "config": "apps/products/vitest.config.ts",
+          "passWithNoTests": true
+        }
+      },
+      "e2e": {
+        "executor": "@nx/playwright:test",
+        "options": {
+          "config": "apps/products-e2e/playwright.config.ts",
+          "reporter": "list"
+        }
+      },
+      "lint": {
+        "executor": "@nx/eslint:lint",
+        "options": {
+          "lintFilePatterns": ["apps/products/src/**/*.{ts,tsx,js,jsx}"]
+        }
+      }
+    },
+    "tags": ["type:frontend", "scope:products"]
+  }
